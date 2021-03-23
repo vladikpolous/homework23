@@ -8,8 +8,7 @@ import java.util.Scanner;
 
 public class CategoryHelp {
 
-    public static void createCategory(DBConnector dbConnector){
-        Scanner scanner = new Scanner(System.in);
+    public static void createCategory(DBConnector dbConnector,Scanner scanner){
         System.out.println("Please, enter category name:");
         String name = scanner.nextLine();
         Category category = CategoryDao.bildCategory(name);

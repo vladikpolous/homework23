@@ -19,6 +19,7 @@ public class CategoryDao {
         }
     }
 
+
     public static Category bildCategory(String name){
         Category category = new Category();
         category.setName(name);

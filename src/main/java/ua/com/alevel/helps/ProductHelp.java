@@ -7,6 +7,7 @@ import ua.com.alevel.model.Category;
 import ua.com.alevel.model.Product;
 import ua.com.alevel.model.User;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class ProductHelp {
@@ -24,5 +25,15 @@ public class ProductHelp {
         System.out.println("Please, enter product name:");
         String name = scanner.nextLine();
         ProductDao.deleteProduct(dbConnector,name);
+    }
+    static void showProducts(DBConnector dbConnector) {
+        List<Product> products = ProductDao.getAll(dbConnector);
+        if (products.size() == 0) {
+            System.out.println("There are no products in the database");
+            return;
+        }
+        for (Product product: products) {
+            System.out.println(product);
+        }
     }
 }

@@ -1,15 +1,28 @@
 package ua.com.alevel.model;
 
+import java.sql.Timestamp;
+import java.util.Date;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Order {
     public int orderId;
     public  User user;
     public  Product product;
     public int quantity;
-    public LocalDate orderTime;
+    public Timestamp orderTime;
 
-    Order(int orderId, User user, Product product, int quantity, LocalDate orderTime){
+    public Timestamp getOrderTime() {
+        return orderTime;
+    }
+
+    public void setOrderTime(Timestamp orderTime) {
+        this.orderTime = orderTime;
+    }
+
+    public Order(){}
+
+    Order(int orderId, User user, Product product, int quantity, Timestamp orderTime){
         this.orderId = orderId;
         this.user = user;
         this.product = product;
@@ -40,13 +53,7 @@ public class Order {
         this.quantity = quantity;
     }
 
-    public LocalDate getOrderTime() {
-        return orderTime;
-    }
 
-    public void setOrderTime(LocalDate orderTime) {
-        this.orderTime = orderTime;
-    }
 
     public int getOrderId() {
         return orderId;
