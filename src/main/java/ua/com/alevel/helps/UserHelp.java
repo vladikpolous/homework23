@@ -21,7 +21,11 @@ public class UserHelp {
         User user = UserDao.bildUser(nickname,email,adress);
         UserDao.InsertNewUser(dbConnector,user);
     }
-
+    public static void getUserByEmail(DBConnector dbConnector,Scanner scanner){
+        System.out.println("Please, enter email of user, you can find out information about this user:");
+        String email = scanner.nextLine();
+        UserDao.getUserByEmail(dbConnector,email);
+    }
     public static void deleteUser(DBConnector dbConnector, Scanner scanner){
         System.out.println("Please, enter nickname:");
         String nickname = scanner.nextLine();

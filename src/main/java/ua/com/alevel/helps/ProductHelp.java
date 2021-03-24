@@ -26,7 +26,7 @@ public class ProductHelp {
         String name = scanner.nextLine();
         ProductDao.deleteProduct(dbConnector,name);
     }
-    static void showProducts(DBConnector dbConnector) {
+    public static  void showProducts(DBConnector dbConnector) {
         List<Product> products = ProductDao.getAll(dbConnector);
         if (products.size() == 0) {
             System.out.println("There are no products in the database");

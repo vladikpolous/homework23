@@ -6,6 +6,16 @@ public class User {
     public String adress;
     public String email;
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", nickname='" + nickname + '\'' +
+                ", adress='" + adress + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
+
     public String getNickname() {
         return nickname;
     }
